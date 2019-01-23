@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :restaurants
-      resources :items
-      resources :comments
+      get "/restaurants/search/:name", to: "restaurants#search"
+      resources :restaurants, only: [:index]
+      resources :items, only: [:index]
+      resources :comments, only: [:index,:create]
     end
   end
 end
