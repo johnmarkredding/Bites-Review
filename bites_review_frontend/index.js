@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/api/v1/restaurants")
+  fetch("http://localhost:3000/api/v1/items")
     .then(res => res.json())
-    .then(displayRestaurants);
+    .then(console.log);
 });
 
 
 
-function displayRestaurants(restaurants) {
-  restaurants.forEach(console.log);
-}
+// function displayRestaurants(restaurants) {
+//   restaurants.forEach(console.log);
+// }

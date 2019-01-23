@@ -1625,3 +1625,397 @@ Processing by Api::V1::RestaurantsController#index as */*
 Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2019-01-23 11:32:38 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/rack-cors-1.0.2/lib/rack/cors.rb:97
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (98.82ms)
+Completed 200 OK in 169ms (Views: 155.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/items" for 127.0.0.1 at 2019-01-23 11:36:43 -0500
+Processing by Api::V1::ItemsController#index as */*
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (59.35ms)
+Completed 200 OK in 66ms (Views: 63.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/items" for 127.0.0.1 at 2019-01-23 11:38:28 -0500
+Processing by Api::V1::ItemsController#index as */*
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.18ms)
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/comments" for 127.0.0.1 at 2019-01-23 11:39:20 -0500
+Processing by Api::V1::CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.85ms)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/comments" for 127.0.0.1 at 2019-01-23 11:42:41 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/rack-cors-1.0.2/lib/rack/cors.rb:97
+Processing by Api::V1::CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.98ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/comments" for 127.0.0.1 at 2019-01-23 11:44:27 -0500
+Processing by Api::V1::CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.96ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/comments" for 127.0.0.1 at 2019-01-23 11:46:41 -0500
+Processing by Api::V1::CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.19ms)
+Completed 200 OK in 81ms (Views: 71.4ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/comments" for 127.0.0.1 at 2019-01-23 11:46:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/rack-cors-1.0.2/lib/rack/cors.rb:97
+Processing by Api::V1::CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.5ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/items" for 127.0.0.1 at 2019-01-23 11:47:26 -0500
+Processing by Api::V1::ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 23]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 24]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 25]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 26]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 27]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 28]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 29]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 30]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 31]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 32]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 33]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 34]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (126.91ms)
+Completed 200 OK in 131ms (Views: 124.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/items" for 127.0.0.1 at 2019-01-23 11:51:19 -0500
+Processing by Api::V1::ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 23]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 24]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 25]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 26]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 27]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 28]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 29]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 30]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 31]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 32]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 33]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 34]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (139.99ms)
+Completed 200 OK in 144ms (Views: 138.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/items" for 127.0.0.1 at 2019-01-23 11:51:50 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/rack-cors-1.0.2/lib/rack/cors.rb:97
+Processing by Api::V1::ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 23]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 24]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 25]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 26]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 27]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 28]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 29]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 30]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 31]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 32]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 33]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 34]]
+[active_model_serializers]   ↳ /Users/Anik/.rvm/gems/ruby-2.5.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (71.55ms)
+Completed 200 OK in 104ms (Views: 95.0ms | ActiveRecord: 5.0ms)
+
+
