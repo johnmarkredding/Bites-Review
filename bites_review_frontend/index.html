@@ -4,23 +4,26 @@
     <meta charset="utf-8">
     <title>Bites Review</title>
     <script src="index.js" type="text/javascript"></script>
+    <link href="reset.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   </head>
   <body>
-    <section>
+    <section id="search-bar">
+      <img src="./logo.svg" alt="">
       <form id="search">
         <input type="text" name="search-text" value="" placeholder="Restaurant Name" required autofocus>
         <input type="submit" value="Search">
       </form>
     </section>
 
-    <section>
+    <section class="hidden" id="menu">
       <h2>Menu Items</h2>
       <ul id="items-ul">
       </ul>
     </section>
 
-    <section class="item-features">
+    <section id="show-item" class="item-features">
 
     </section>
   </body>

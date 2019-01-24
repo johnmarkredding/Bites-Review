@@ -23,7 +23,13 @@ function searchHandler(e) {
   e.preventDefault();
   Item.all().length = 0;
   let searchText = e.target.querySelector("input[name='search-text']");
+
+   document.querySelector("#menu").className = ""
+   document.querySelector("#show-item").innerHTML = ""
+
   getData(`http://localhost:3000/api/v1/restaurants/search/${searchText.value}`, restaurantHandler);
+  searchText.value = "";
+
 }
 function restaurantHandler(restaurant) {
   let itemUL = document.querySelector("#items-ul");
