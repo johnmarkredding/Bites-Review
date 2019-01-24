@@ -1,6 +1,6 @@
 class Api::V1::CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @comments = Item.find(params[:item_id]).comments
     render json: @comments
   end
   def create
