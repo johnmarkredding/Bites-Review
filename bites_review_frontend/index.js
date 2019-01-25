@@ -55,8 +55,9 @@ function itemEventHandler(event) {
   }
 }
 function createComment(comment) {
+  let date = comment.created_at.split("T").slice(0, 1)
   let commentLI = document.createElement("li");
-  commentLI.innerText = comment.content;
+  commentLI.innerHTML = `${comment.content} <span>${date}</span>`;
   return commentLI;
 }
 function displayComment(ul, commentLI) {
@@ -73,6 +74,7 @@ function newCommentHandler(e) {
   postData(`http://localhost:3000/api/v1/items/${e.target.dataset.id}/comments`, comment, (comment) => {
     let comments = document.querySelector(".comments");
     createAndDisplayComment(comments, comment);
+
   });
 }
 function createAndDisplayComment(ul, comment) {
