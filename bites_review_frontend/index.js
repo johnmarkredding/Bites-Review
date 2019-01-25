@@ -22,21 +22,25 @@ function postData(url, data, cb) {
 function searchHandler(e) {
   e.preventDefault();
   Item.all().length = 0;
+
   let searchText = e.target.querySelector("input[name='search-text']");
-
-   document.querySelector("#menu").className = ""
-   document.querySelector("#show-item").innerHTML = ""
-
   getData(`http://localhost:3000/api/v1/restaurants/search/${searchText.value}`, restaurantHandler);
   searchText.value = "";
 
+  document.querySelector("#show-item").innerHTML = "";
 }
 function restaurantHandler(restaurant) {
   let itemUL = document.querySelector("#items-ul");
-  itemUL.className = "";
   itemUL.innerHTML = "";
-  handleItems(restaurant.items);
-  itemUL.addEventListener("click", itemEventHandler);
+  if (restaurant) {
+    document.querySelector("#menu").classList.remove("hidden");
+    // itemUL.className = "";
+    handleItems(restaurant.items);
+    itemUL.addEventListener("click", itemEventHandler);
+  } else {
+    alert("Not a Restaurant!!!!");
+    document.querySelector("#menu").classList.add("hidden");
+  }
 }
 function handleItems(arr) {
   arr.forEach(item => new Item(item));
@@ -136,7 +140,7 @@ const Item = function() {
       section.innerHTML = ""
       section.dataset.id = this.id
       let h2 = document.createElement("h2")
-      h2.innerText = `${this.name } $ ${this.price}`
+      h2.innerText = `${this.name } $${this.price}`
       let p = document.createElement("p")
       p.innerText = this.description
       let ul = document.createElement("ul")

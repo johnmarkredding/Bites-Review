@@ -180,8 +180,12 @@ hr {
 
 input,
 select {
-    vertical-align: middle;
-    font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-feature-settings: inherit;
+  font-style: inherit;
+  vertical-align: middle;
 }
 
 html {

@@ -19954,3 +19954,1153 @@ Processing by Api::V1::CommentsController#index as */*
 Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:06:17 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/johnmark/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (41.79ms)
+Completed 200 OK in 107ms (Views: 71.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:06:20 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.59ms)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 09:06:21 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:06:30 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.2ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:06:39 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.23ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:06:43 -0500
+Processing by Api::V1::CommentsController#create as */*
+  Parameters: {"content"=>"Hey!", "item_id"=>"18", "comment"=>{"content"=>"Hey!"}}
+Unpermitted parameter: :comment
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[36mComment Create (2.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Hey!"], ["item_id", 18], ["created_at", "2019-01-25 14:06:43.396688"], ["updated_at", "2019-01-25 14:06:43.396688"]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/restaurants/search/fkjdfk" for 127.0.0.1 at 2019-01-25 09:14:31 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"fkjdfk"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "fkjdfk"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:14:35 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.6ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/restaurants/search/jkf" for 127.0.0.1 at 2019-01-25 09:16:14 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"jkf"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "jkf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/dfsk" for 127.0.0.1 at 2019-01-25 09:16:15 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"dfsk"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "dfsk"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/kldfsjf" for 127.0.0.1 at 2019-01-25 09:16:16 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kldfsjf"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kldfsjf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/kj" for 127.0.0.1 at 2019-01-25 09:16:35 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kj"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kj"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:16:38 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.3ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:16:50 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.68ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:16:51 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.38ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/restaurants/search/DKfjsk" for 127.0.0.1 at 2019-01-25 09:16:54 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"DKfjsk"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "DKfjsk"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:21:34 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.48ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/-webkit-appearance:%20textfield" for 127.0.0.1 at 2019-01-25 09:33:15 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"-webkit-appearance: textfield"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "-webkit-appearance: textfield"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:36:03 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.46ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:36:04 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.42ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/items/20/comments" for 127.0.0.1 at 2019-01-25 09:36:05 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"20"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:36:06 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.72ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:36:45 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (8.1ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:36:47 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.8ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/Restaurant" for 127.0.0.1 at 2019-01-25 09:50:04 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Restaurant"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Restaurant"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/Rkjdjds" for 127.0.0.1 at 2019-01-25 09:50:10 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Rkjdjds"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Rkjdjds"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/dfkslfj" for 127.0.0.1 at 2019-01-25 09:50:11 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"dfkslfj"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "dfkslfj"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/dsfklfdkjl" for 127.0.0.1 at 2019-01-25 09:50:12 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"dsfklfdkjl"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "dsfklfdkjl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/sdflksjkf" for 127.0.0.1 at 2019-01-25 09:50:13 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"sdflksjkf"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "sdflksjkf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/kjjsdjklsfkjs" for 127.0.0.1 at 2019-01-25 09:50:21 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjjsdjklsfkjs"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjjsdjklsfkjs"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/jklfsdjf" for 127.0.0.1 at 2019-01-25 09:50:26 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"jklfsdjf"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "jklfsdjf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/Sseva" for 127.0.0.1 at 2019-01-25 09:50:30 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Sseva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Sseva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:50:32 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.45ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/restaurants/search/e" for 127.0.0.1 at 2019-01-25 09:51:34 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"e"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:51:36 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.09ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:51:38 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.07ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/restaurants/search/Spicy%20Shallot" for 127.0.0.1 at 2019-01-25 09:51:45 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Spicy Shallot"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Spicy Shallot"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.37ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items/24/comments" for 127.0.0.1 at 2019-01-25 09:51:47 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"24"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 24]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/lkfsjklf" for 127.0.0.1 at 2019-01-25 09:53:24 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"lkfsjklf"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "lkfsjklf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/kjfdskl" for 127.0.0.1 at 2019-01-25 09:53:51 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjfdskl"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjfdskl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/kjlsfkjl" for 127.0.0.1 at 2019-01-25 09:53:52 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjlsfkjl"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjlsfkjl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/klfjkldsf" for 127.0.0.1 at 2019-01-25 09:53:54 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"klfjkldsf"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "klfjkldsf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:54:04 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.53ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/kjfdf" for 127.0.0.1 at 2019-01-25 09:54:06 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjfdf"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjfdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/kljdsjf" for 127.0.0.1 at 2019-01-25 09:54:07 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kljdsjf"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kljdsjf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/kljsfjkldklj" for 127.0.0.1 at 2019-01-25 09:54:09 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kljsfjkldklj"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kljsfjkldklj"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/klsfkjldkf" for 127.0.0.1 at 2019-01-25 09:54:10 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"klsfkjldkf"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "klsfkjldkf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:54:18 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.05ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:54:18 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.71ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 09:54:20 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:54:22 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.22ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/kljfskjl" for 127.0.0.1 at 2019-01-25 09:54:24 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kljfskjl"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kljfskjl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/klskfjl" for 127.0.0.1 at 2019-01-25 09:54:43 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"klskfjl"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "klskfjl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:54:56 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.16ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:54:58 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.55ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/restaurants/search/kjldfkjld" for 127.0.0.1 at 2019-01-25 09:54:59 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjldfkjld"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjldfkjld"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:55:49 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.99ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/kjlfs" for 127.0.0.1 at 2019-01-25 09:55:51 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjlfs"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjlfs"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/kjdfklj" for 127.0.0.1 at 2019-01-25 09:56:14 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjdfklj"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjdfklj"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/kjlds" for 127.0.0.1 at 2019-01-25 09:56:16 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjlds"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjlds"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.09ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/dfsklk" for 127.0.0.1 at 2019-01-25 09:56:18 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"dfsklk"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "dfsklk"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:56:21 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (4.81ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:56:23 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.16ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 09:56:23 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/21/comments" for 127.0.0.1 at 2019-01-25 09:56:24 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"21"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.38ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/22/comments" for 127.0.0.1 at 2019-01-25 09:56:25 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"22"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/items/22/comments" for 127.0.0.1 at 2019-01-25 09:56:30 -0500
+Processing by Api::V1::CommentsController#create as */*
+  Parameters: {"content"=>"fsklfjd", "item_id"=>"22", "comment"=>{"content"=>"fsklfjd"}}
+Unpermitted parameter: :comment
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "fsklfjd"], ["item_id", 22], ["created_at", "2019-01-25 14:56:30.279398"], ["updated_at", "2019-01-25 14:56:30.279398"]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 18ms (Views: 1.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:59:22 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.89ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:59:25 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.91ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/Restaurant" for 127.0.0.1 at 2019-01-25 09:59:42 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Restaurant"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Restaurant"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 09:59:47 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.35ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 09:59:49 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 09:59:50 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.42ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 09:59:50 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:00:15 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.47ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:00:16 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.74ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:00:25 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.59ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:00:26 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.77ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:00:51 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.44ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:00:52 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.07ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:03:17 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.3ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:07:01 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.96ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:07:09 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.48ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/skiffs" for 127.0.0.1 at 2019-01-25 10:07:15 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"skiffs"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "skiffs"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:08:37 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:08:40 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.72ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:17:50 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (5.07ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/restaurants/search/fkjdslf" for 127.0.0.1 at 2019-01-25 10:18:28 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"fkjdslf"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "fkjdslf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/klsdfkl" for 127.0.0.1 at 2019-01-25 10:18:30 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"klsdfkl"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "klsdfkl"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:18:32 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.78ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:18:33 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.45ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:20:35 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.78ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/20/comments" for 127.0.0.1 at 2019-01-25 10:20:36 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"20"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 10:20:37 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:20:37 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.82ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/20/comments" for 127.0.0.1 at 2019-01-25 10:20:38 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"20"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.04ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/22/comments" for 127.0.0.1 at 2019-01-25 10:20:39 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"22"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/23/comments" for 127.0.0.1 at 2019-01-25 10:20:40 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"23"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 23]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/restaurants/search/Seva" for 127.0.0.1 at 2019-01-25 10:21:06 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"Seva"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "Seva"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/restaurants_controller.rb:8
+[active_model_serializers] Rendered RestaurantSerializer with ActiveModelSerializers::Adapter::Attributes (3.04ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 10:21:07 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:21:09 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.88ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/items/20/comments" for 127.0.0.1 at 2019-01-25 10:21:10 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"20"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.94ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/21/comments" for 127.0.0.1 at 2019-01-25 10:21:11 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"21"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/20/comments" for 127.0.0.1 at 2019-01-25 10:21:12 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"20"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 20]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/21/comments" for 127.0.0.1 at 2019-01-25 10:21:13 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"21"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 21]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.15ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items/22/comments" for 127.0.0.1 at 2019-01-25 10:21:14 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"22"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 22]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items/23/comments" for 127.0.0.1 at 2019-01-25 10:21:14 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"23"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 23]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/19/comments" for 127.0.0.1 at 2019-01-25 10:21:15 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"19"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 19]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items/18/comments" for 127.0.0.1 at 2019-01-25 10:21:16 -0500
+Processing by Api::V1::CommentsController#index as */*
+  Parameters: {"item_id"=>"18"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:3
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."item_id" = ?[0m  [["item_id", 18]]
+  ↳ app/controllers/api/v1/comments_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.51ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants/search/kjlfgd" for 127.0.0.1 at 2019-01-25 10:21:18 -0500
+Processing by Api::V1::RestaurantsController#search as */*
+  Parameters: {"name"=>"kjlfgd"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."name" = ? LIMIT ?[0m  [["name", "kjlfgd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/restaurants_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
